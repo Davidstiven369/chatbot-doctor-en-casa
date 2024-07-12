@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor en Casa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-card">
+            <div class="avatar-container">
+                <img src="{{ url_for('static', filename='doctor_avatar.png') }}" alt="Doctor Avatar" class="avatar">
+            </div>
+            <div class="chat-content">
+                <div class="message">
+                    <p>{{ message }}</p>
+                </div>
+                <form action="/send_message" method="POST" class="chat-form">
+                    <input type="text" name="user_message" placeholder="Escribe tu mensaje aquí..." required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
